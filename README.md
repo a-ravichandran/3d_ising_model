@@ -44,9 +44,7 @@ According to the conventional **classification of phase transitions**, a transit
     - can represent a magnetic system with electron spins, beta-brass, a lattice gas etc.
 
 2. The Hamiltonian (energy) of the system is given by the following expresion,
-\begin{equation}
-    \mathcal{H} = -J\sum_{\text{lattice }(i)}\sum_{\text{NN} (j)} s_i s_j - B \sum_{\text{lattice }(i)}s_i \tag{1}
-\end{equation}
+$$\mathcal{H} = -J\sum_{\text{lattice }(i)}\sum_{\text{NN} (j)} s_i s_j - B \sum_{\text{lattice }(i)}s_i \tag{1}$$
 
 where $B \sim$ magnetic field and $J \sim$ spin interaction term. The index $i$ runs over all lattice points and $j$ runs over the nearest neighbors of a lattice point $i$ (every point in a 3D lattice has $6$ nearest neighbors).
 
@@ -83,11 +81,17 @@ The following will be evaluated using our simulations ($N_{MC}$ = total Monte Ca
 
 1. **Average Energy per lattice point**: $$\frac{<\mathcal{H}>}{N_{lat}^3} = \frac{1}{N_{lat}^3 \times N_{MC}} \sum_{\text{MC}(t)} \mathcal{H}_t \tag{2}$$
 
-2. **Average Magnetization per lattice point**: $$\frac{<\mathcal{M}>}{N_{lat}^3} = \frac{1}{N_{lat}^3 \times N_{MC}} \sum_{\text{MC}(t)} \mathcal{M}_t \tag{3}$$ where $$\mathcal{M} = \sum_{\text{lattice }(i)}s_i \tag{4}$$
+2. **Average Magnetization per lattice point**:
 
-3. **Heat Capacity per lattice point**: $$\frac{<\mathcal{C}>}{N_{lat}^3} = \frac{1}{N_{lat}^3 \times N_{MC}} \sum_{\text{MC}(t)} \mathcal{C}_t \tag{5}$$ where $$\mathcal{C} = k_B\beta^2 \left(<\mathcal{H}^2> - <\mathcal{H}>^2\right) \tag{6}$$
+$$\frac{<\mathcal{M}>}{N_{lat}^3} = \frac{1}{N_{lat}^3 \times N_{MC}} \sum_{\text{MC}(t)} \mathcal{M}_t \tag{3}$$
 
-4. **Succeptibility per lattice point**: $$\frac{<\mathcal{\chi}>}{N_{lat}^3} = \frac{1}{N_{lat}^3 \times N_{MC}} \sum_{\text{MC}(t)} \mathcal{\chi}_t \tag{7}$$ where $$\mathcal{\chi} = \beta\left(<\mathcal{M}^2> - <\mathcal{M}>^2 \right) \tag{8}$$
+$$\mathcal{M} = \sum_{\text{lattice }(i)}s_i \tag{4}$$
+
+3. **Heat Capacity per lattice point**: 
+$$\frac{<\mathcal{C}>}{N_{lat}^3} = \frac{1}{N_{lat}^3 \times N_{MC}} \sum_{\text{MC}(t)} \mathcal{C}_t \tag{5}$$ where $$\mathcal{C} = k_B\beta^2 \left(<\mathcal{H}^2> - <\mathcal{H}>^2\right) \tag{6}$$
+
+4. **Succeptibility per lattice point**: 
+$$\frac{<\mathcal{\chi}>}{N_{lat}^3} = \frac{1}{N_{lat}^3 \times N_{MC}} \sum_{\text{MC}(t)} \mathcal{\chi}_t \tag{7}$$ where $$\mathcal{\chi} = \beta\left(<\mathcal{M}^2> - <\mathcal{M}>^2 \right) \tag{8}$$
 
 **Note:** These quantities are actually evaluated over $N_{MC} - N_{therm}$ times at a gap of $N_{corr}$ states from the chain ($N_{corr}$ = correlation time steps, $N_{therm}$ = thermalizaion time steps). This is done to ensure that only sum those states in the chain after the chain has thermalized, and only over uncorrelated states in the chain.
 
